@@ -72,34 +72,4 @@ if uploaded_dirty and uploaded_clean:
         # Restart button logic
     if st.button("Restart"):
         st.experimental_rerun()
-#     st.markdown("**Tip:** You can download the results as CSV after copying the table above into Excel or use Streamlit's download button with a few more lines of code.")
 
-
-
-# # Compute cosine similarity between all pairs
-# similarity_matrix = cosine_similarity(dirty_emb, clean_emb)
-
-# # For each dirty name, find the best match in clean names
-# best_match_indices = np.argmax(similarity_matrix, axis=1)
-# best_match_scores = np.max(similarity_matrix, axis=1)
-
-# # Set a similarity threshold (e.g., 0.7)
-# threshold = 0.5
-# count = 0
-# print("Best matches above threshold:\n")
-# for i, (idx, score) in enumerate(zip(best_match_indices, best_match_scores)):
-#     if score >= threshold:
-#         print(f"{dirty_names[i]}  <==>  {clean_names[idx]}  (similarity: {score:.2f})")
-#         count += 1
-
-# print(f"\nTotal matches above threshold: {count}")
-# print(f"Total dirty names: {len(dirty_names)}")
-# # Save results to a CSV file
-# results = pd.DataFrame({
-#     'dirty_name': dirty_names,
-#     'best_match': [clean_names[idx] for idx in best_match_indices],
-#     'similarity_score': best_match_scores
-# })
-# results = results[results['similarity_score'] >= threshold]
-# results.to_csv('match_results.csv', index=False)
-# print("Results saved to 'match_results.csv'.")
